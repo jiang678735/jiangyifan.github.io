@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蒋翼帆 - 电气工程师</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+    .serif {
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa, #34d399, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gradient-border {
+      position: relative;
+    }
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(135deg, #60a5fa, #34d399);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .timeline-dot {
+      position: relative;
+    }
+    .timeline-dot::before {
+      content: '';
+      position: absolute;
+      left: -33px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #60a5fa, #34d399);
+      border: 2px solid #1e293b;
+    }
+    .skill-bar {
+      background: rgba(96, 165, 250, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      background: linear-gradient(90deg, #60a5fa, #34d399);
+      border-radius: 9999px;
+      transition: width 1s ease-out;
+    }
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .hover-glow {
+      transition: all 0.3s ease;
+    }
+    .hover-glow:hover {
+      box-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+      transform: translateY(-2px);
+    }
+    .social-btn {
+      transition: all 0.3s ease;
+    }
+    .social-btn:hover {
+      background: linear-gradient(135deg, #60a5fa, #34d399);
+      transform: scale(1.1);
+    }
+    .bg-grid {
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #60a5fa, #34d399);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-grid">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="glass-card rounded-3xl overflow-hidden shadow-2xl">
+      <div class="relative h-48 sm:h-64">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/40 via-cyan-600/30 to-teal-600/40"></div>
+        <div class="absolute inset-0 opacity-20">
+          <svg class="w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.5" />
+                <stop offset="100%" style="stop-color:#34d399;stop-opacity:0.5" />
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="80" r="60" fill="url(#gradient)" class="animate-pulse" />
+            <circle cx="300" cy="120" r="80" fill="url(#gradient)" class="animate-pulse" style="animation-delay: 1s" />
+          </svg>
+        </div>
+      </div>
+      
+      <div class="relative px-8 -mt-24">
+        <div class="flex flex-col items-center fade-in-up">
+          <div class="gradient-border rounded-full p-1">
+            <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden bg-slate-800">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20photo%20of%20a%20young%20Asian%20male%20engineer%20wearing%20business%20attire%20confident%20smile%20studio%20lighting%20dark%20background&image_size=square" alt="头像" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <h1 class="mt-6 text-3xl sm:text-4xl font-bold serif">蒋翼帆</h1>
+          <p class="mt-2 text-lg text-blue-400 font-medium">电气工程师</p>
+          <p class="mt-2 text-gray-400 text-sm text-center max-w-xs">
+            专注工业自动化 · 控制系统设计 · PLC编程
+          </p>
+          <div class="flex gap-3 mt-5">
+            <a href="#" class="social-btn w-11 h-11 bg-slate-700/50 rounded-full flex items-center justify-center text-gray-300">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-btn w-11 h-11 bg-slate-700/50 rounded-full flex items-center justify-center text-gray-300">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-btn w-11 h-11 bg-slate-700/50 rounded-full flex items-center justify-center text-gray-300">
+              <i class="fab fa-weixin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-8 py-10">
+        <section class="mb-10 fade-in-up delay-100">
+          <h2 class="section-title text-xl font-semibold text-white mb-5 flex items-center">
+            <span class="w-2 h-6 bg-gradient-to-b from-blue-400 to-teal-400 rounded-full mr-3"></span>
+            关于我
+          </h2>
+          <p class="text-gray-400 leading-relaxed text-sm sm:text-base">
+            专注于电气自动化领域，具备扎实的电气工程理论基础和丰富的实践经验。
+            熟练掌握电气系统设计、PLC编程、自动化控制等技术，能够独立完成项目方案设计与实施。
+            工作认真负责，善于团队协作，具有良好的沟通能力和问题解决能力。
+          </p>
+        </section>
+
+        <section class="mb-10 fade-in-up delay-200">
+          <h2 class="section-title text-xl font-semibold text-white mb-5 flex items-center">
+            <span class="w-2 h-6 bg-gradient-to-b from-blue-400 to-teal-400 rounded-full mr-3"></span>
+            工作经历
+          </h2>
+          <div class="space-y-6">
+            <div class="timeline-dot hover-glow bg-slate-800/40 rounded-xl p-5 border border-slate-700/50">
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+                <div>
+                  <h3 class="text-lg font-semibold text-white">电气工程师</h3>
+                  <p class="text-blue-400 text-sm mt-1">浙江中控技术股份有限公司</p>
+                </div>
+                <span class="text-xs text-gray-500 mt-2 sm:mt-0 bg-slate-700/50 px-3 py-1 rounded-full">2022 - 至今</span>
+              </div>
+              <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                负责工业自动化控制系统设计与调试，完成多个大型化工项目的PLC编程和现场调试工作，
+                优化控制系统性能，降低设备故障率，提升生产效率。
+              </p>
+            </div>
+            
+            <div class="timeline-dot hover-glow bg-slate-800/40 rounded-xl p-5 border border-slate-700/50">
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+                <div>
+                  <h3 class="text-lg font-semibold text-white">助理电气工程师</h3>
+                  <p class="text-blue-400 text-sm mt-1">杭州华电工程技术有限公司</p>
+                </div>
+                <span class="text-xs text-gray-500 mt-2 sm:mt-0 bg-slate-700/50 px-3 py-1 rounded-full">2020 - 2022</span>
+              </div>
+              <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                协助完成电气系统方案设计，参与变电站和配电房的建设与改造项目，
+                负责电气设备选型和采购，编制技术文档和操作手册。
+              </p>
+            </div>
+            
+            <div class="timeline-dot hover-glow bg-slate-800/40 rounded-xl p-5 border border-slate-700/50">
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+                <div>
+                  <h3 class="text-lg font-semibold text-white">电气技术员</h3>
+                  <p class="text-blue-400 text-sm mt-1">宁波奥克斯电气股份有限公司</p>
+                </div>
+                <span class="text-xs text-gray-500 mt-2 sm:mt-0 bg-slate-700/50 px-3 py-1 rounded-full">2019 - 2020</span>
+              </div>
+              <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                负责生产线电气设备的日常维护和故障排除，参与设备改造升级项目，
+                学习PLC和变频器的调试技术，积累了丰富的现场实践经验。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10 fade-in-up delay-300">
+          <h2 class="section-title text-xl font-semibold text-white mb-5 flex items-center">
+            <span class="w-2 h-6 bg-gradient-to-b from-blue-400 to-teal-400 rounded-full mr-3"></span>
+            教育背景
+          </h2>
+          <div class="hover-glow bg-slate-800/40 rounded-xl p-5 border border-slate-700/50">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+              <div>
+                <h3 class="text-lg font-semibold text-white">电气工程及其自动化</h3>
+                <p class="text-gray-400 text-sm mt-1">浙江大学</p>
+                <p class="text-gray-500 text-xs mt-1">本科</p>
+              </div>
+              <span class="text-xs text-gray-500 mt-2 sm:mt-0 bg-slate-700/50 px-3 py-1 rounded-full">2015 - 2019</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10 fade-in-up delay-400">
+          <h2 class="section-title text-xl font-semibold text-white mb-5 flex items-center">
+            <span class="w-2 h-6 bg-gradient-to-b from-blue-400 to-teal-400 rounded-full mr-3"></span>
+            专业技能
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="skill-item group">
+              <div class="bg-slate-800/60 rounded-xl p-4 border border-slate-700/50 hover:border-blue-500/50 transition-all">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-cpu text-blue-400"></i>
+                  <span class="text-sm font-medium text-white">PLC编程</span>
+                </div>
+                <div class="skill-bar h-1.5">
+                  <div class="skill-fill h-full" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="bg-slate-800/60 rounded-xl p-4 border border-slate-700/50 hover:border-blue-500/50 transition-all">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-drafting-compass text-teal-400"></i>
+                  <span class="text-sm font-medium text-white">AutoCAD</span>
+                </div>
+                <div class="skill-bar h-1.5">
+                  <div class="skill-fill h-full" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="bg-slate-800/60 rounded-xl p-4 border border-slate-700/50 hover:border-blue-500/50 transition-all">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-bolt text-yellow-400"></i>
+                  <span class="text-sm font-medium text-white">电气设计</span>
+                </div>
+                <div class="skill-bar h-1.5">
+                  <div class="skill-fill h-full" style="width: 88%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="bg-slate-800/60 rounded-xl p-4 border border-slate-700/50 hover:border-blue-500/50 transition-all">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-industry text-purple-400"></i>
+                  <span class="text-sm font-medium text-white">变频器调试</span>
+                </div>
+                <div class="skill-bar h-1.5">
+                  <div class="skill-fill h-full" style="width: 78%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="bg-slate-800/60 rounded-xl p-4 border border-slate-700/50 hover:border-blue-500/50 transition-all">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-tablet-alt text-pink-400"></i>
+                  <span class="text-sm font-medium text-white">触摸屏编程</span>
+                </div>
+                <div class="skill-bar h-1.5">
+                  <div class="skill-fill h-full" style="width: 82%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="bg-slate-800/60 rounded-xl p-4 border border-slate-700/50 hover:border-blue-500/50 transition-all">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-network-wired text-cyan-400"></i>
+                  <span class="text-sm font-medium text-white">工业通信</span>
+                </div>
+                <div class="skill-bar h-1.5">
+                  <div class="skill-fill h-full" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="fade-in-up delay-500">
+          <h2 class="section-title text-xl font-semibold text-white mb-5 flex items-center">
+            <span class="w-2 h-6 bg-gradient-to-b from-blue-400 to-teal-400 rounded-full mr-3"></span>
+            联系方式
+          </h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50 flex items-center gap-3 hover:border-blue-500/30 transition-all">
+              <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <i class="fas fa-phone text-blue-400"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">电话</p>
+                <p class="text-sm text-white">159-6857-3954</p>
+              </div>
+            </div>
+            <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50 flex items-center gap-3 hover:border-blue-500/30 transition-all">
+              <div class="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center">
+                <i class="fas fa-envelope text-teal-400"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">邮箱</p>
+                <p class="text-sm text-white">jiangyifan@email.com</p>
+              </div>
+            </div>
+            <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50 flex items-center gap-3 hover:border-blue-500/30 transition-all">
+              <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
+                <i class="fas fa-map-marker-alt text-purple-400"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">地址</p>
+                <p class="text-sm text-white">浙江省杭州市</p>
+              </div>
+            </div>
+            <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50 flex items-center gap-3 hover:border-blue-500/30 transition-all">
+              <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                <i class="fab fa-weixin text-green-400"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">微信</p>
+                <p class="text-sm text-white">jyf123456520</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="bg-slate-800/30 px-8 py-6 border-t border-slate-700/30">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p class="text-gray-500 text-sm">© 2024 蒋翼帆 版权所有</p>
+          <p class="text-gray-600 text-xs">Designed with passion</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const skillFills = document.querySelectorAll('.skill-fill');
+      skillFills.forEach((fill, index) => {
+        fill.style.width = '0%';
+        setTimeout(() => {
+          fill.style.width = fill.getAttribute('style').replace('width: 0%', '').trim();
+        }, 800 + index * 100);
+      });
+    });
+  </script>
+</body>
+</html>
